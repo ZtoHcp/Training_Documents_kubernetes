@@ -15,27 +15,32 @@ sudo -i
 
 apt update -y
 
-#Set the appropriate hostname for each machine.
+#Set the appropriate hostname for each machine. Will be reset with reboot
 #-----------------------------------------------
 sudo hostnamectl set-hostname "kmaster-node"
 exec bash
 
+#To set the hostname permanently, edit /etc/hosts
 sudo vi /etc/hosts
 172.31.2.192 kmaster-node
 #Remember to replace the IPs with those of your systems.
 
 #And only the worker node:
 #--------------------------
+#Set the appropriate hostname for each machine. Will be reset with reboot
 sudo hostnamectl set-hostname "worker-node1"
 exec bash
 
+#To set the hostname permanently, edit /etc/hosts
 sudo vi /etc/hosts
 172.31.3.113 worker-node1
 #Remember to replace the IPs with those of your systems.
 
+#Set the appropriate hostname for each machine. Will be reset with reboot
 sudo hostnamectl set-hostname "worker-node2"
 exec bash
 
+#To set the hostname permanently, edit /etc/hosts
 sudo vi /etc/hosts
 172.31.0.41 worker-node2
 
@@ -138,7 +143,7 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt
 sudo apt update -y
 sudo apt install -y kubelet kubeadm kubectl
 
-#Set up the firewall by installing the following rules on the master/both the nodes:
+#Set up the firewall by installing the following rules on the master nodes:
 sudo ufw allow 6443/tcp
 sudo ufw allow 2379/tcp
 sudo ufw allow 2380/tcp
@@ -148,7 +153,7 @@ sudo ufw allow 10252/tcp
 sudo ufw allow 10255/tcp
 sudo ufw reload
 
-#And these rules on the worker/both the nodes:
+#And these rules on the worker nodes:
 
 sudo ufw allow 10251/tcp
 sudo ufw allow 10255/tcp
@@ -175,9 +180,9 @@ sudo systemctl enable kubelet
 
 sudo kubeadm config images pull
 
-#Initialize the cluster
+#Initialize the cluster in master node
 
-#sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+#sudo kubeadm init --pod-network-cidr=10.244.0.0/16 - command used in prod. using ignore flags in test env to ignore cpu and memory requirement errors
 
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem
 
@@ -280,6 +285,7 @@ NAME          STATUS   ROLES                  AGE     VERSION
 master-node   Ready    control-plane,master   5m12s   v1.24.1
 worker-node   Ready    worker                 2m55s   v1.24.1
 
+#To regenerate token from master node when we want to join a new node to the cluster
 
 #sudo kubeadm token create --print-join-command
 
