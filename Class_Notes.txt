@@ -54,13 +54,13 @@ Day 1 - 13th Jan. 2024
 			
 				Kubernetes is Open-Source Container Orchestration Tool :
 				It is used to Deploy the Micro-Service Based Applications and Services 
-				Used to Achive Continous Deployment without Downtime
+				Used to Achieve Continuous Deployment without Downtime
 				
 			Deployment ???
 			
 				What is Application Deployment ???
 				
-					Artifacts ???  --> 
+					Artifacts ???  --> Artifacts contain the source code of the application
 					
 				Life Cycle of Application :::
 					
@@ -137,8 +137,8 @@ Day 1 - 13th Jan. 2024
 			
 				Kubernetes is Open-Source Container Orchestration Tool
 				It is used to Deploy the Micro-Service Based Applications and Services 
-				Used to Achive Continous Deployment without any Downtime
-					Supports Relicas, Auto-Scaling, Load-Balancing
+				Used to Achieve Continuous Deployment without any Downtime
+					Supports Replicas, Auto-Scaling, Load-Balancing
 					
 						10000 Users		50 Replicas of Containers 
 
@@ -153,6 +153,18 @@ Day 1 - 13th Jan. 2024
 				
 				Monolith Application Architecture :::
 							Tightly Coupled Application :::
+							A **tightly coupled application** refers to a software system in which the components or modules are highly dependent on each other. This means that changes to one component often require changes to others, making the system less flexible and harder to maintain. Tightly coupled applications typically share data and control in a way that the modules are interdependent.
+
+                            Key characteristics of tightly coupled applications include:
+
+                            1. **Direct dependencies**: Modules or components are directly linked, often with complex, hardcoded references between them.
+                            2. **Lack of flexibility**: Modifying one component may affect multiple others, leading to potential issues with scalability and future updates.
+                            3. **Difficult maintenance**: Because of the interdependencies, testing and updating specific parts of the system can be time-consuming and error-prone.
+                            4. **Reduced modularity**: The system’s components are not easily replaceable or reusable independently.
+
+                            In contrast, a **loosely coupled application** allows components to interact with minimal dependency, making it more adaptable, scalable, and maintainable.
+
+                            Tightly coupled systems are typically seen in older, monolithic architectures, whereas modern architectures (like microservices) focus on loosening these dependencies for better scalability and maintainability.
 							
 					Billing System :: Destop Application 
 
@@ -197,7 +209,9 @@ Day 1 - 13th Jan. 2024
 							
 						Use IDEs - Integrated Development Environment - VS Code, Visual Studio, Eclipse, pycharm - can be easily integrated with GIT, Jenkins
 					
-					Continous Integration 
+					Continous Integration
+					        Continuous Integration (CI) is a software development practice where code changes are automatically integrated into a shared repository several times a day. The key idea is to frequently commit small, incremental updates to the codebase, which are then automatically tested and validated. This helps ensure that new changes don't break existing functionality, promotes collaboration, and improves the overall quality of the software.
+
 							Integrated the changes (Artifacts / Images) 
 							
 						Tools ::: jenkins, docker, kubernetes 
@@ -305,7 +319,7 @@ Day 2 - 14th Jan. 2024
 
 
 
-				Kubernetes_Master
+				Kubernetes_Master - called as master of masters
 					Kubernetes_Master1 
 						Kubernetes_Cluster1
 							Worker_Node1	(VM)
