@@ -19,6 +19,8 @@ Overview:
 
 1. Creating Configmap from "multiple files" & Consuming it inside Pod from "volumes" 
 
+Since data needs to be accessible across all worker nodes, files are created in the master node and config map is mounted as volume. Volumes key and volumemounts key are used. Volumes key is used to mount an external volume, which is not part of your pod. Volumemounts key is used to attach the volume to the container on the specified path(mount path - container volume). Secrets follows the same method.
+Configmap is applicable at a cluster-level.
 
 1a.  Create Configmap "nginx-configmap-vol" from "multiple files":
 ------------------------------------------------------------------
@@ -26,7 +28,7 @@ echo -n 'Non-sensitive data inside file-1' > file-1.txt
 echo -n 'Non-sensitive data inside file-2' > file-2.txt
 
 kubectl create configmap nginx-configmap-vol --from-file=file-1.txt --from-file=file-2.txt
-# rm -f file-1 file-2
+# rm -f file-1 file-2 - files can be removed after configmap has been created
 
 kubectl get configmaps
 kubectl describe configmaps nginx-configmap-vol

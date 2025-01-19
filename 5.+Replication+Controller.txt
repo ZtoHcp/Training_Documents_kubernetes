@@ -3,7 +3,8 @@
 
 1. Replication Controller YAML file
 
-# nginx-rc.yaml  
+# nginx-rc.yaml
+#template is the same as metadata of nginx-pod.yaml. container specification is defined under template
 apiVersion: v1
 kind: ReplicationController
 metadata:

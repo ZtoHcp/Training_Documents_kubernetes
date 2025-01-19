@@ -526,15 +526,15 @@ Day 4 - 21st Jan. 2024
 		
 			
 			Deployment Controller Object.
-				1. It is used to create replicas of Pods 			v1.0  =  v1.1
-				2. Used to Upgrade the Application Version without any downtime
+				1. It is used to create replicas of Pods
+				2. Used to Upgrade the Application Version without any downtime (v1.0 to  v1.1)
 				3. Downgrade/rollback the applications  without any downtime
 				4. Scale-Up 
 				5. Scale-Down 
 				
 			Prod_Server =>  mywebapp_v1.0		==> 	mywebapp_v1.1	
 			
-			Relicas 3 ==> Used to ensure high availability of pods. 
+			Replicas 3 ==> Used to ensure high availability of pods.
 			
 			pod_instance1(mywebapp_v1.0)		==>		mywebapp_v1.1	
 			pod_instance2(mywebapp_v1.0)
@@ -548,7 +548,7 @@ Day 4 - 21st Jan. 2024
 							
 			If deployment of new version fails, we can do rollback.
 							
-				- Canary / Blue-Deployments
+				- Canary / Blue-green Deployments
 			
 			
 			Define Deployment Controller Objects :::
