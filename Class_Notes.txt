@@ -898,7 +898,7 @@ Deployment :::
 
 	Scheduler to deploy the pods in the Nodes.
 	
-		Scheduler Identify the Healthy Worker Node for Deployment !!!
+		Scheduler Identifies the Healthy Worker Node for Deployment !!!
 		
 		From ETCD, it collects the details of the workerNodes.
 		
