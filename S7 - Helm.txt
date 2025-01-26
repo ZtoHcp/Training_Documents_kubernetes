@@ -8,11 +8,11 @@ HELM Chart for prometheus
 
 Eg.: Kubernetes Dashboard installation using HELM
 
-Install HELM 
-on kubernetes master node install Helm
+Install HELM on kubernetes master node
+
+install Helm
 
 #Downlaod helm tar ball for linux
-
 
 wget https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
 
